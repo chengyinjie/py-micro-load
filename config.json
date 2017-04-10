@@ -1,0 +1,47 @@
+{
+    "testing": {
+        "enviroment": "http://qa.live.ksmobile.net",
+        "params": {
+            "ptvn": "2",
+		    "mcc": "460",
+		    "ver": "2.0",
+		    "vercode": "2.0.203301.342",
+		    "os": "iOS",
+		    "api": "12900000",
+		    "model": "iPhone10",
+		    "cl": "zh-Hans-JP",
+            "countryCode": "JP"
+        }
+    },
+    "log": {
+        "version": 1,
+        "formatters": {
+            "brief": {
+                "format": "[%(levelname)s] [%(filename)s] %(message)s"
+            },
+            "brieftime": {
+                "format": "%(asctime)s - [%(filename)s] - %(message)s",
+                "datefmt": "%Y%m%d %H:%M:%S"
+            }
+        },
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "formatter": "brief",
+                "level": "DEBUG",
+                "stream": "ext://sys.stdout"
+            },
+            "file": {
+                "class": "logging.handlers.RotatingFileHandler",
+                "encoding": "utf8",
+                "filename": "../run.log",
+                "maxBytes": 102400000,
+                "level": "DEBUG"
+            }
+        },
+        "root": {
+            "level": "DEBUG",
+            "handlers": ["console"]
+        }
+    }
+}
